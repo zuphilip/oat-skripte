@@ -1,0 +1,446 @@
+<?xml version="1.0" ?>
+<schedule>
+  <conference>
+    <title>Open Access Tage 2022</title>
+    <start>2022-09-19</start>
+    <end>2022-09-21</end>
+    <venue>Gurten (Bern)(</venue>
+    <days>3</days>
+    <timeslot_duration>00:30</timeslot_duration>
+    <city>Bern</city>
+  </conference>
+  <day date="2022-09-19" index="1">
+    <room name="Gurtenbahn Talstation">
+      <event id="11">
+        <date>2022-09-19T09:00:00+02:00</date>
+        <start>09:00</start>
+        <duration>01:30</duration>
+        <room>Gurtenbahn Talstation</room>
+        <track>Sonstige</track>
+        <abstract></abstract>
+        <title>Registrierung</title>
+        <type>Sonstige</type>
+      </event>
+    </room>
+    <room name="Eingang Kulturschüür">
+      <event id="15">
+        <date>2022-09-19T09:30:00+02:00</date>
+        <start>09:30</start>
+        <duration>01:00</duration>
+        <room>Eingang Kulturschüür</room>
+        <track>Sonstige</track>
+        <abstract></abstract>
+        <title>Speed-Dating</title>
+        <type>Sonstige</type>
+      </event>
+    </room>
+    <room name="Kulturschür">
+      <event id="12">
+        <date>2022-09-19T10:30:00+02:00</date>
+        <start>10:30</start>
+        <duration>00:30</duration>
+        <room>Kulturschür</room>
+        <track>Sonstige</track>
+        <abstract></abstract>
+        <title>Kaffee</title>
+        <type>Sonstige</type>
+      </event>
+      <event id="13">
+        <date>2022-09-19T12:30:00+02:00</date>
+        <start>12:30</start>
+        <duration>01:00</duration>
+        <room>Kulturschür</room>
+        <track>Sonstige</track>
+        <abstract></abstract>
+        <title>Mittagspause</title>
+        <type>Sonstige</type>
+      </event>
+      <event id="14">
+        <date>2022-09-19T15:00:00+02:00</date>
+        <start>15:00</start>
+        <duration>00:30</duration>
+        <room>Kulturschür</room>
+        <track>Sonstige</track>
+        <abstract></abstract>
+        <title>Kaffee</title>
+        <type>Sonstige</type>
+      </event>
+    </room>
+    <room name="Pavillon">
+      <event id="k1">
+        <date>2022-09-19T11:00:00+02:00</date>
+        <start>11:00</start>
+        <duration>01:30</duration>
+        <room>Pavillon</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Keynote 1: Scholarly publishing is broken. How do we fix it?</title>
+        <type>Vortragssession</type>
+      </event>
+      <event id="s2">
+        <date>2022-09-19T13:30:00+02:00</date>
+        <start>13:30</start>
+        <duration>01:30</duration>
+        <room>Pavillon</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 2: Diamond OA: Institutionelles Publizieren</title>
+        <type>Vortrag</type>
+      </event>
+      <event id="s3">
+        <date>2022-09-19T15:30:00+02:00</date>
+        <start>15:30</start>
+        <duration>01:30</duration>
+        <room>Pavillon</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 3: OA-Transformation auf dem Prüfstand</title>
+        <type>Vortragssession</type>
+      </event>
+    </room>
+    <room name="Ussych/Wytsicht">
+      <event id="s1">
+        <date>2022-09-19T13:30:00+02:00</date>
+        <start>13:30</start>
+        <duration>01:30</duration>
+        <track>Vortragssession</track>
+        <room>Ussicht/Wytsicht</room>
+        <abstract></abstract>
+        <title>Session 1: OA-Monitoring und Konsortialverträge in der Schweiz</title>
+        <type>Vortrag</type>
+      </event>
+      <event id="s4">
+        <date>2022-09-19T15:30:00+02:00</date>
+        <start>15:30</start>
+        <duration>01:30</duration>
+        <room>Ussicht/Wytsicht</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 4: Organisationsentwicklung, Forschungslücken, Bibliodiversität</title>
+        <type>Vortragssession</type>
+      </event>
+    </room>
+    <room name="Gewölbekeller">
+      <event id="w1">
+        <date>2022-09-19T13:30:00+02:00</date>
+        <start>13:30</start>
+        <duration>01:30</duration>
+        <room>Gewölbekeller</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 1: Treffen sich zwei Artikel hinter einer Paywall. Kommt eine Zweitveröffentlichungsoption vorbei…</title>
+        <type>Workshop</type>
+      </event>
+      <event id="w3">
+        <date>2022-09-19T15:30:00+02:00</date>
+        <start>15:30</start>
+        <duration>01:30</duration>
+        <room>Gewölbekeller</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 3:  Jenseits von DEAL - Kooperative Ansätze für die Open-Access-Transformation in den Sozial- und Geisteswissenschaften</title>
+        <type>Workshop</type>
+      </event>
+    </room>
+    <room name="Sibe">
+      <event id="w2">
+        <date>2022-09-19T13:30:00+02:00</date>
+        <start>13:30</start>
+        <duration>01:30</duration>
+        <room>Sibe</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 2: Open Access im Dreieck - zwischen OA-Support, integrierter Medienbearbeitung und Bestandsentwicklung</title>
+        <type>Workshop</type>
+      </event>
+      <event id="w4">
+        <date>2022-09-19T15:30:00+02:00</date>
+        <start>15:30</start>
+        <duration>01:30</duration>
+        <room>Sibe</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 4: Open-Access-Analysen für die Praxis</title>
+        <type>Workshop</type>
+      </event>
+    </room>
+    <room name="Münstergasse 61 (Nähe Zytglogge)">
+      <event id="m1">
+        <date>2022-09-19T18:30:00+02:00</date>
+        <start>18:30</start>
+        <duration>01:00</duration>
+        <room>Münstergasse 61 (Nähe Zytglogge)</room>
+        <track>Sonstige</track>		
+        <abstract></abstract>
+        <title>Führung durch die Bibliothek Münstergasse</title>
+        <type>Sonstige</type>
+      </event>
+    </room>
+    <room name="Aula im Progr">
+      <event id="a1">
+        <date>2022-09-19T20:00:00+02:00</date>
+        <start>20:00</start>
+        <duration>03:00</duration>
+        <room>Aula im Progr</room>
+        <track>Sonstige</track>		
+        <abstract></abstract>
+        <title>Abendveranstaltung</title>
+        <type>Sonstige</type>
+      </event>
+    </room>
+  </day>
+    <day date="2022-09-20" index="2">
+    <room name="Gurtenbahn Talstaton">
+    </room>
+    <room name="Kulturschür">
+      <event id="21">
+        <date>2022-09-20T09:00:00+02:00</date>
+        <start>09:00</start>
+        <duration>01:15</duration>
+        <room>Kulturschür</room>
+        <track>Postersession</track>
+        <abstract></abstract>
+        <title>Postersession</title>
+        <type>Postersession</type>
+      </event>
+      <event id="22">
+        <date>2022-09-20T13:00:00+02:00</date>
+        <start>13:00</start>
+        <duration>01:00</duration>
+        <room>Kulturschür</room>
+        <track>Sonstige</track>
+        <abstract></abstract>
+        <title>Mittagspause</title>
+        <type>Sonstige</type>
+      </event>
+      <event id="23">
+        <date>2022-09-20T15:30:00+02:00</date>
+        <start>15:30</start>
+        <duration>00:30</duration>
+        <room>Kulturschür</room>
+        <track>Sonstige</track>		
+        <abstract></abstract>
+        <title>Kaffeepause</title>
+        <type>Sonstige</type>
+      </event>
+    </room>
+    <room name="Pavillon">
+      <event id="k2">
+        <date>2022-09-20T10:15:00+02:00</date>
+        <start>10:15</start>
+        <duration>01:00</duration>
+        <room>Pavillon</room>
+        <track>Keynote</track>
+        <abstract></abstract>
+        <title>Keynote 2: Gemeinsam mehr erreichen - Mit Kollaboration zur Transformation</title>
+        <type>Keynote</type>
+      </event>
+      <event id="s6">
+        <date>2022-09-20T11:30:00+02:00</date>
+        <start>11:30</start>
+        <duration>01:30</duration>
+        <room>Pavillon</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 6: Konsortiale Verträge</title>
+        <type>Vortragssession</type>
+      </event>
+      <event id="s8">
+        <date>2022-09-20T14:00:00+02:00</date>
+        <start>14:00</start>
+        <duration>01:30</duration>
+        <room>Pavillon</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 8: Publikationskostenmonitoring</title>
+        <type>Vortragssession</type>
+      </event>
+      <event id="s9">
+        <date>2022-09-20T16:00:00+02:00</date>
+        <start>16:00</start>
+        <duration>01:30</duration>
+        <room>Pavillon</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 9: Kollaboration unter Förderorganisationen</title>
+        <type>Vortragssession</type>
+      </event>
+    </room>
+    <room name="Ussicht/Wytsicht">
+      <event id="s5">
+        <date>2022-09-20T11:30:00+02:00</date>
+        <start>11:30</start>
+        <duration>01:30</duration>
+        <room>Ussicht/Wytsicht</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 5: OA in der Forschung</title>
+        <type>Vortragssession</type>
+      </event>
+      <event id="s7">
+        <date>2022-09-20T14:00:00+02:00</date>
+        <start>14:00</start>
+        <duration>01:30</duration>
+        <room>Ussicht/Wytsicht</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 7: OA-Bücher: Trends und Herausforderungen</title>
+        <type>Vortragssession</type>
+      </event>
+    </room>
+    <room name="Sibe">
+      <event id="w5">
+        <date>2022-09-20T11:30:00+02:00</date>
+        <start>11:30</start>
+        <duration>01:30</duration>
+        <room>Sibe</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 5: Kollaboration, Engagement, Prozess: Rolle der Bibliotheken in der Entwicklung der «Diamond-Landschaft»</title>
+        <type>Workshop</type>
+      </event>
+      <event id="w7">
+        <date>2022-09-20T14:00:00+02:00</date>
+        <start>14:00</start>
+        <duration>01:30</duration>
+        <room>Sibe</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 7: Workshop zur Organisation von Open-Access-Veranstaltungen</title>
+        <type>Workshop</type>
+      </event>
+    </room>
+    <room name="Eis, Zwöi, Vier, Sächs">
+      <event id="t1">
+        <date>2022-09-20T16:00:00+02:00</date>
+        <start>16:00</start>
+        <duration>01:30</duration>
+        <room>Eis, Zwöi, Vier, Sächs</room>
+        <track>Tools</track>
+        <abstract></abstract>
+        <title>Tool-Marktplatz</title>
+        <type>Tools</type>
+      </event>
+    </room>
+    <room name="Gewölbekeller">
+      <event id="w6">
+        <date>2022-09-20T11:30:00+02:00</date>
+        <start>11:30</start>
+        <duration>01:30</duration>
+        <room>Gewölbekeller</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 6: Erfahrungsaustausch Informationsbudget. Ein Workshop zum Publikations- und Kostenmonitoring</title>
+        <type>Workshop</type>
+      </event>
+      <event id="w8">
+        <date>2022-09-20T14:00:00+02:00</date>
+        <start>14:00</start>
+        <duration>01:30</duration>
+        <room>Gewölbekeller</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 8: Open Library Badge – eine Auszeichnung für unsere Bibliothek?</title>
+        <type>Workshop</type>
+      </event>
+    </room>
+    <room name="abgesagt">
+      <event id="s10">
+        <date>2022-09-20T16:00:00+02:00</date>
+        <start>16:00</start>
+        <duration>01:30</duration>
+        <room>abgesagt</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 10: Open Access und Urheberrecht</title>
+        <type>Vortragssession</type>
+      </event>
+    </room>
+  </day>
+    <day date="2022-09-21" index="3">
+    <room name="Gurtenbahn Talstaton">
+    </room>
+    <room name="Kulturschür">
+      <event id="31">
+        <date>2022-09-21T11:00:00+02:00</date>
+        <start>11:00</start>
+        <duration>00:30</duration>
+        <room>Kulturschür</room>
+        <track>Sonstige</track>
+        <abstract></abstract>
+        <title>Kaffeepause</title>
+        <type>Sonstige</type>
+      </event>
+    </room>
+    <room name="Pavillon">
+      <event id="s12">
+        <date>2022-09-21T09:30:00+02:00</date>
+        <start>09:30</start>
+        <duration>01:30</duration>
+        <room>Pavillon</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 12: (Meta)Daten für OA</title>
+        <type>Vortragssession</type>
+      </event>
+      <event id="k3">
+        <date>2022-09-21T11:30:00+02:00</date>
+        <start>11:30</start>
+        <duration>01:00</duration>
+        <room>Pavillon</room>
+        <track>Keynote</track>
+        <abstract></abstract>
+        <title>Keynote 3: Ups and downs of open science in a pandemic</title>
+        <type>Keynote</type>
+      </event>
+    </room>
+    <room name="Ussicht/Wytsicht">
+      <event id="s11">
+        <date>2022-09-21T09:30:00+02:00</date>
+        <start>09:30</start>
+        <duration>01:30</duration>
+        <room>Ussicht/Wytsicht</room>
+        <track>Vortragssession</track>
+        <abstract></abstract>
+        <title>Session 11: Scholar-led Publishing</title>
+        <type>Vortragssession</type>
+      </event>
+    </room>
+    <room name="Gewölbekeller">
+      <event id="w9">
+        <date>2022-09-21T09:30:00+02:00</date>
+        <start>09:30</start>
+        <duration>01:30</duration>
+        <room>Gewölbekeller</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 9: Open Access interaktiv vermitteln – Multiplikator:innen gewinnen</title>
+        <type>Workshop</type>
+      </event>
+    </room>
+    <room name="Sibe">
+      <event id="w10">
+        <date>2022-09-21T09:30:00+02:00</date>
+        <start>09:30</start>
+        <duration>01:30</duration>
+        <room>Sibe</room>
+        <track>Workshop</track>
+        <abstract></abstract>
+        <title>Workshop 10: Publishing Contracts: how to Negotiate Solutions that Favor Open Access</title>
+        <type>Workshop</type>
+      </event>
+    </room>
+    <room name="Münstergasse 61 (Nähe Zytglogge)">
+      <event id="m2">
+        <date>2022-09-21T14:00:00+02:00</date>
+        <start>14:00</start>
+        <duration>01:00</duration>
+        <room>Münstergasse 61 (Nähe Zytglogge)</room>
+        <track>Sonstige</track>		
+        <abstract></abstract>
+        <title>Führung durch die Bibliothek Münstergasse</title>
+        <type>Sonstige</type>
+      </event>
+    </room>
+  </day>
+</schedule>
