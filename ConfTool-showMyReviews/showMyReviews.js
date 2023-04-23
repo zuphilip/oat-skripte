@@ -9,6 +9,9 @@ for (let el of elements) {
 
 var nodeList = Array.prototype.slice.call(elements);
 nodeList.sort(function (a, b) {
+  if (!a.dataset.score && !b.dataset.score) return 0;
+  if (!a.dataset.score) return 1;
+  if (!a.dataset.score) return -1;
   return a.dataset.score > b.dataset.score ? 1 : -1;
 });
 
