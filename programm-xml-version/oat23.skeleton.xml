@@ -1,0 +1,320 @@
+<?xml version="1.0" ?>
+<schedule>
+  <conference>
+    <title>Open Access Tage 2023</title>
+    <start>2023-09-27</start>
+    <end>2023-09-29</end>
+    <venue>Berlin</venue>
+    <days>3</days>
+    <timeslot_duration>00:30</timeslot_duration>
+    <city>Berlin</city>
+  </conference>
+  <day date="2023-09-27" index="1">
+    <room name="Eingang Otto-von-Simson-Straße 26">
+      <event id="11">
+        <start>08:30</start>
+        <duration>02:00</duration>
+        <title>Ankommen und Registrierung</title>
+      </event>
+    </room>
+    <room name="tba">
+      <event id="15">
+        <start>09:00</start>
+        <duration>01:00</duration>
+        <title>Speed-Dating</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Hörsaal 1a">
+      <event id="k1">
+        <start>10:30</start>
+        <duration>01:30</duration>
+        <title>Keynote 1: Publikationsmanager*inInnen statt Katalogisier*inInnen?  Anforderungen an die Organisations- und Professionsentwicklung in Bibliotheken im Zuge der Open-Access-Transformation?</title>
+        <abstract></abstract>
+      </event>
+      <event id="s1">
+        <start>13:30</start>
+        <duration>01:30</duration>
+        <title>Session 1: Monitoring</title>
+        <abstract></abstract>
+      </event>
+      <event id="s3">
+        <start>15:30</start>
+        <duration>01:30</duration>
+        <title>Session 3: Praxis Informationsbudget</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Hörsaal 1b"></room>
+    <room name="Hörsaal 2">
+      <event id="s2">
+        <start>13:30</start>
+        <duration>01:30</duration>
+        <title>Session 2: Evaluation von Aspekten der OA-Transformation</title>
+        <abstract></abstract>
+      </event>
+      <event id="s4">
+        <start>15:30</start>
+        <duration>01:30</duration>
+        <title>Session 4: Open Access im Bereich Kunst und Kulturerbe</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Seminarraum L115">
+      <event id="w1">
+        <start>13:30</start>
+        <duration>01:30</duration>
+        <title>Workshop 1: Creative-Commons-Lizenzen für Bücher – ein Beratungsleitfaden aus und für die Community</title>
+        <abstract></abstract>
+      </event>
+      <event id="w3">
+        <start>15:30</start>
+        <duration>01:30</duration>
+        <title>Workshop 3: Visionen für Repositorien</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Seminarraum L116">
+      <event id="w2">
+        <start>13:30</start>
+        <duration>01:30</duration>
+        <title>Workshop 2: PID-Superpower „Metadaten“. Entwicklung von Metadaten-User-Stories für Open-Access-Publikationen</title>
+        <abstract></abstract>
+      </event>
+      <event id="w4">
+        <start>15:30</start>
+        <duration>01:30</duration>
+        <title>Workshop 4: Open Access an Fachhochschulen</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Mensa">
+      <event id="12">
+        <start>12:00</start>
+        <duration>01:30</duration>
+        <title>Mittagspause</title>
+      </event>
+    </room>
+    <room name="Seminarzentrum, Bereich vor den Hörsälen">
+      <event id="13">
+        <start>15:00</start>
+        <duration>00:30</duration>
+        <title>Kaffeepause</title>
+      </event>
+    </room>
+    <room name="Seminarzentrum">
+      <event id="14">
+        <start>17:00</start>
+        <duration>01:00</duration>
+        <title>Ausklang</title>
+      </event>
+    </room>
+    <room name="Museum für Naturkunde">
+      <event id="a1">
+        <start>20:00</start>
+        <duration>03:00</duration>
+        <title>Konferenzdinner</title>
+        <abstract></abstract>
+      </event>
+    </room>
+  </day>
+  <day date="2023-09-28" index="2">
+    <room name="Eingang Otto-von-Simson-Straße 26">
+      <event id="21">
+        <start>08:30</start>
+        <duration>00:30</duration>
+        <title>Ankommen und Registrierung</title>
+      </event>
+    </room>
+    <room name="Hörsaal 1a">
+      <event id="k2">
+        <start>09:00</start>
+        <duration>01:00</duration>
+        <title>Keynote 2: Das Große denken: Wie eine offene Forschung zwischen Wissenschaft, Kunst und Gesellschaft Transformationsprozesse beschleunigen kann</title>
+        <abstract></abstract>
+      </event>
+      <event id="s5">
+        <start>11:30</start>
+        <duration>01:30</duration>
+        <title>Session 5: Partizipation und Kollektive</title>
+        <abstract></abstract>
+      </event>
+      <event id="s8">
+        <start>14:30</start>
+        <duration>01:30</duration>
+        <title>Session 8: Podiumsdiskussion DEAL</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Hörsaal 1b">
+      <event id="s6">
+        <start>11:30</start>
+        <duration>01:30</duration>
+        <title>Session 6: Metadaten für Publikationen und Publikationssysteme</title>
+        <abstract></abstract>
+      </event>
+      <event id="s7">
+        <start>14:30</start>
+        <duration>01:30</duration>
+        <title>Session 7: Publikationspraxis: Zeitschriften und Konferenzbände</title>
+        <abstract></abstract>
+      </event>
+      <event id="s9">
+        <start>16:30</start>
+        <duration>01:30</duration>
+        <title>Session 9: Publikation PLUS</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Seminarraum L115">
+      <event id="w5">
+        <start>11:30</start>
+        <duration>01:30</duration>
+        <title>Workshop 5: Von Open-Access- zu Open-Science-Policies: Was sind neue Inhalte und Wege der Umsetzung?</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Seminarraum L116">
+      <event id="w6">
+        <start>11:30</start>
+        <duration>01:30</duration>
+        <title>Workshop 6: Think. Check. Support. - Publikationsfonds als Kommunikations- und Steuerungsinstrument einsetzen</title>
+        <abstract></abstract>
+      </event>
+      <event id="w7">
+        <start>16:30</start>
+        <duration>01:30</duration>
+        <title>Workshop 7: Die Zukunft von Open Access Büchern in der Deutschen Open Access Landschaft: Strategische, Ökonomische und wissenschaftspolitische Perspektiven</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="tba">
+      <event id="p1">
+        <start>10:00</start>
+        <duration>01:00</duration>
+        <title>Postersession</title>
+        <abstract></abstract>
+      </event>
+      <event id="t1">
+        <start>16:30</start>
+        <duration>01:30</duration>
+        <title>Tool-Marktplatz</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Mensa">
+      <event id="22">
+        <start>13:00</start>
+        <duration>01:30</duration>
+        <title>Mittagspause</title>
+      </event>
+    </room>
+    <room name="Seminarzentrum, Bereich vor den Hörsälen">
+      <event id="23">
+        <start>11:00</start>
+        <duration>00:30</duration>
+        <title>Kaffeepause</title>
+      </event>
+      <event id="24">
+        <start>16:00</start>
+        <duration>00:30</duration>
+        <title>Kaffeepause</title>
+      </event>
+    </room>
+    <room name="Seminarzentrum">
+      <event id="25">
+        <start>18:00</start>
+        <duration>00:30</duration>
+        <title>Ausklang</title>
+      </event>
+    </room>
+    <room name="Hochschule für Schauspielkunst Ernst Busch">
+      <event id="a2">
+        <start>19:00</start>
+        <duration>03:00</duration>
+        <title>Social Event</title>
+        <abstract></abstract>
+      </event>
+    </room>
+  </day>
+  <day date="2023-09-29" index="3">
+    <room name="Eingang Otto-von-Simson-Straße 26">
+      <event id="31">
+        <start>08:30</start>
+        <duration>00:30</duration>
+        <title>Ankommen und Registrierung</title>
+      </event>
+    </room>
+    <room name="Hörsaal 1a">
+      <event id="s10">
+        <start>09:00</start>
+        <duration>01:30</duration>
+        <title>Session 10: Perspektiven der Open-Access-Transformation</title>
+        <abstract></abstract>
+      </event>
+      <event id="k3">
+        <start>11:00</start>
+        <duration>01:30</duration>
+        <title>Keynote 3: Access denied! Warum Zugangsbeschränkungen der Wissenschaft schaden</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Hörsaal 1b">
+      <event id="s11">
+        <start>09:00</start>
+        <duration>01:30</duration>
+        <title>Session 11: Vielfältige Wege und Lösungen in der Open-Access-Transformation</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Seminarraum L115">
+      <event id="w8">
+        <start>09:00</start>
+        <duration>01:30</duration>
+        <title>Workshop 8: Ideensammlung für die Open-Access-Förderung durch die DFG ab 2028</title>
+        <abstract></abstract>
+      </event>
+      <event id="o1">
+        <start>14:00</start>
+        <duration>02:00</duration>
+        <title>Offene Workshops</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Seminarraum L116">
+      <event id="w9">
+        <start>09:00</start>
+        <duration>01:30</duration>
+        <title>Workshop 9: Diamond &amp; Fair. Wie unterstützen Bibliotheken Diamond-Open-Access-Bücher?</title>
+        <abstract></abstract>
+      </event>
+      <event id="o2">
+        <start>14:00</start>
+        <duration>02:00</duration>
+        <title>Offene Workshops</title>
+        <abstract></abstract>
+      </event>
+    <room name="Mensa">
+      <event id="32">
+        <start>12:30</start>
+        <duration>01:30</duration>
+        <title>Mittagspause</title>
+      </event>
+    </room>
+    <room name="Seminarzentrum, Bereich vor den Hörsälen">
+      <event id="33">
+        <start>10:30</start>
+        <duration>00:30</duration>
+        <title>Kaffeepause</title>>
+      </event>
+    </room>
+    <room name="Seminarzentrum">
+      <event id="35">
+        <start>16:00</start>
+        <duration>01:00</duration>
+        <title>Ausklang</title>
+      </event>
+    </room>
+    </room>
+  </day>
+</schedule>
