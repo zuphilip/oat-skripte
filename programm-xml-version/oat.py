@@ -39,7 +39,10 @@ for url in ["https://open-access-tage.de/open-access-tage-2023-berlin/programm/m
                     times[title_short] = left_side.text.strip()
                 # restart with the next one
                 title = child.text.strip().replace(u'\xa0', u' ')
-                title_short = title.split(":")[0]
+                if title.startswith(("Session", "Workshop", "Keynote")):
+                    title_short = title.split(":")[0]
+                else:
+                    title_short = title
                 content = ""
             else:
                 if child.text.strip() == "Zusammenfassung":
@@ -81,7 +84,10 @@ for event in root_node.findall('day/room/event'):
         seen_ids.append(ref)
     # title, track, type
     title = event.find('title').text.strip()
-    title_short = title.split(":")[0]
+    if title.startswith(("Session", "Workshop", "Keynote")):
+        title_short = title.split(":")[0]
+    else:
+        title_short = title
     if title_short in ["Postersession", "Tool-Marktplatz"]:
         track = title_short
     elif "Session" in title_short or "Keynote" in title_short:
@@ -117,7 +123,7 @@ for event in root_node.findall('day/room/event'):
     if title in ["Kaffeepause", "Mittagspause", "Ausklang", "Ankommen und Registrierung"]:
         continue
     if title_short in times:
-        [start, end] = times[title_short].split("-")
+        [start, end] = times[title_short].split('–')
         start_time = [int(x) for x in start.split(".")]
         comparison_time = [int(x) for x in event.find("start").text.split(":")]
         if start_time != comparison_time:

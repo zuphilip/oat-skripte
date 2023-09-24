@@ -17,19 +17,11 @@
         <title>Ankommen und Registrierung</title>
       </event>
     </room>
-    <room name="tba">
-      <event id="15">
-        <start>09:00</start>
-        <duration>01:00</duration>
-        <title>Speed-Dating</title>
-        <abstract></abstract>
-      </event>
-    </room>
     <room name="Hörsaal 1a">
       <event id="k1">
         <start>10:30</start>
         <duration>01:30</duration>
-        <title>Keynote 1: Publikationsmanager*inInnen statt Katalogisier*inInnen?  Anforderungen an die Organisations- und Professionsentwicklung in Bibliotheken im Zuge der Open-Access-Transformation?</title>
+        <title>Keynote 1: Publikationsmanager*innen statt Katalogisier*innen? Anforderungen an die Organisations- und Professionsentwicklung in Bibliotheken im Zuge der Open-Access-Transformation</title>
         <abstract></abstract>
       </event>
       <event id="s1">
@@ -50,7 +42,7 @@
       <event id="s2">
         <start>13:30</start>
         <duration>01:30</duration>
-        <title>Session 2: Evaluation von Aspekten der OA-Transformation</title>
+        <title>Session 2: Evaluation von Aspekten der Open-Access-Transformation</title>
         <abstract></abstract>
       </event>
       <event id="s4">
@@ -61,6 +53,12 @@
       </event>
     </room>
     <room name="Seminarraum L115">
+      <event id="15">
+        <start>09:00</start>
+        <duration>01:00</duration>
+        <title>Speed-Dating</title>
+        <abstract></abstract>
+      </event>
       <event id="w1">
         <start>13:30</start>
         <duration>01:30</duration>
@@ -107,6 +105,22 @@
         <start>17:00</start>
         <duration>01:00</duration>
         <title>Ausklang</title>
+      </event>
+    </room>
+    <room name="Botanischer Garten">
+      <event id="a3">
+        <start>17:30</start>
+        <duration>01:30</duration>
+        <title>Führung: Botanischer Garten</title>
+        <abstract></abstract>
+      </event>
+    </room>
+    <room name="Tiergarten">
+      <event id="a4">
+        <start>17:45</start>
+        <duration>00:45</duration>
+        <title>Laufrunde im Tiergarten</title>
+        <abstract></abstract>
       </event>
     </room>
     <room name="Museum für Naturkunde">
@@ -170,7 +184,7 @@
       <event id="w5">
         <start>11:30</start>
         <duration>01:30</duration>
-        <title>Workshop 5: Von Open-Access- zu Open-Science-Policies: Was sind neue Inhalte und Wege der Umsetzung?</title>
+        <title>Workshop 5: Von Open Access zu Open Science Policies: Was sind neue Inhalte und Wege der Umsetzung?</title>
         <abstract></abstract>
       </event>
     </room>
@@ -178,27 +192,13 @@
       <event id="w6">
         <start>11:30</start>
         <duration>01:30</duration>
-        <title>Workshop 6: Think. Check. Support. - Publikationsfonds als Kommunikations- und Steuerungsinstrument einsetzen</title>
+        <title>Workshop 6: Think. Check. Support. – Publikationsfonds als Kommunikations- und Steuerungsinstrument einsetzen</title>
         <abstract></abstract>
       </event>
       <event id="w7">
         <start>16:30</start>
         <duration>01:30</duration>
-        <title>Workshop 7: Die Zukunft von Open Access Büchern in der Deutschen Open Access Landschaft: Strategische, Ökonomische und wissenschaftspolitische Perspektiven</title>
-        <abstract></abstract>
-      </event>
-    </room>
-    <room name="tba">
-      <event id="p1">
-        <start>10:00</start>
-        <duration>01:00</duration>
-        <title>Postersession</title>
-        <abstract></abstract>
-      </event>
-      <event id="t1">
-        <start>16:30</start>
-        <duration>01:30</duration>
-        <title>Tool-Marktplatz</title>
+        <title>Workshop 7: Die Zukunft von Open-Access-Büchern in der deutschen Open-Access-Landschaft: Strategische, ökonomische und wissenschaftspolitische Perspektiven</title>
         <abstract></abstract>
       </event>
     </room>
@@ -207,6 +207,27 @@
         <start>13:00</start>
         <duration>01:30</duration>
         <title>Mittagspause</title>
+      </event>
+    </room>
+    <room name="Seminarzentrum">
+      <event id="p1">
+        <start>10:00</start>
+        <duration>01:00</duration>
+        <title>Postersession</title>
+        <abstract></abstract>
+      </event>
+      <event id="25">
+        <start>18:00</start>
+        <duration>00:30</duration>
+        <title>Ausklang</title>
+      </event>
+    </room>
+    <room name="KL 29/110, KL 29/111, KL 29/135, KL 29/137, KL 29/139">
+      <event id="t1">
+        <start>16:30</start>
+        <duration>01:30</duration>
+        <title>Tool-Marktplatz</title>
+        <abstract></abstract>
       </event>
     </room>
     <room name="Seminarzentrum, Bereich vor den Hörsälen">
@@ -221,11 +242,12 @@
         <title>Kaffeepause</title>
       </event>
     </room>
-    <room name="Seminarzentrum">
-      <event id="25">
-        <start>18:00</start>
-        <duration>00:30</duration>
-        <title>Ausklang</title>
+    <room name="Philologische Bibliothek">
+      <event id="a5">
+        <start>18:15</start>
+        <duration>00:35</duration>
+        <title>Führung: Philologische Bibliothek</title>
+        <abstract></abstract>
       </event>
     </room>
     <room name="Hochschule für Schauspielkunst Ernst Busch">
@@ -294,6 +316,7 @@
         <title>Offene Workshops</title>
         <abstract></abstract>
       </event>
+    </room>
     <room name="Mensa">
       <event id="32">
         <start>12:30</start>
@@ -314,7 +337,6 @@
         <duration>01:00</duration>
         <title>Ausklang</title>
       </event>
-    </room>
     </room>
   </day>
 </schedule>
