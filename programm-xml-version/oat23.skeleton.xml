@@ -111,7 +111,7 @@
       <event id="a3">
         <start>17:30</start>
         <duration>01:30</duration>
-        <title>Führung: Botanischer Garten</title>
+        <title>VERSCHOBEN: Führung Botanischer Garten</title>
         <abstract></abstract>
       </event>
     </room>
@@ -185,6 +185,12 @@
         <start>11:30</start>
         <duration>01:30</duration>
         <title>Workshop 5: Von Open Access zu Open Science Policies: Was sind neue Inhalte und Wege der Umsetzung?</title>
+        <abstract></abstract>
+      </event>
+      <event id="d1">
+        <start>16:30</start>
+        <duration>01:30</duration>
+        <title>Spontan-Session zu DEAL</title>
         <abstract></abstract>
       </event>
     </room>
@@ -336,6 +342,14 @@
         <start>16:00</start>
         <duration>01:00</duration>
         <title>Ausklang</title>
+      </event>
+    </room>
+    <room name="Botanischer Garten">
+      <event id="a6">
+        <start>14:30</start>
+        <duration>01:30</duration>
+        <title>Führung: Botanischer Garten</title>
+        <abstract></abstract>
       </event>
     </room>
   </day>
