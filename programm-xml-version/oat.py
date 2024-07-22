@@ -1,21 +1,78 @@
 #!/usr/bin/env python3
 
+import re
 import requests
 
 from bs4 import BeautifulSoup
-from lxml import etree as ET
+from datetime import date, datetime
+from xml.dom import minidom
 
-abstracts = {}
-titles = {}
-rooms = {}
-times = {}
+from pentabarf.Conference import Conference
+from pentabarf.Day import Day
+from pentabarf.Event import Event
+from pentabarf.Room import Room
 
-for url in ["https://open-access-tage.de/open-access-tage-2023-berlin/programm/mittwoch-27092023",
-            "https://open-access-tage.de/open-access-tage-2023-berlin/programm/donnerstag-28092023",
-            "https://open-access-tage.de/open-access-tage-2023-berlin/programm/freitag-29092023"]:
+global_counter = 0
+seen_ids = []
+
+conference = Conference(
+    title="Open Access Tage 2024",
+    start=date(2024, 9, 10),
+    end=date(2024, 9, 12),
+    days=3,
+    timeslot_duration="00:30",
+    venue="TH Köln",
+    city="Köln"
+)
+
+def generate_id(title_short):
+    if title_short.startswith(("Session", "Workshop", "Keynote")):
+        counter = title_short.split(" ")[1]
+        if counter.isdigit():
+            return title_short[0].lower() + counter
+        else:
+            print("ERROR: Failed to create an id. Unexpected format (title_short):", title_short)
+    else:
+        return "counter"
+def determine_track(title_short):
+    if title_short in ["Postersession", "Tool-Marktplatz"]:
+        return title_short
+    elif "Session" in title_short or "Keynote" in title_short:
+        return "Vortragssession"
+    elif "Workshop" in title_short:
+        return "Workshop"
+    else:
+        return "Sonstige"
+
+# returns start time and duration both in the format hh:mm
+def extract_start_time(time_span):
+    [start, end] = time_span.split('–')
+    start_time = [int(x) for x in re.split("\.|:", start)]
+    end_time = [int(x) for x in re.split("\.|:", end)]
+    diff = (end_time[0]-start_time[0])*60+(end_time[1]-start_time[1])
+    if len(start) == 4: # e.g. 9:00
+        start = "0" + start
+
+    return start.replace(".", ":"), '%02d:%02d' % (diff // 60, diff % 60)
+
+for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/programm/dienstag-10092024",
+            "https://open-access-tage.de/open-access-tage-2024-koeln/koeln/programm/mittwoch-11092024",
+            "https://open-access-tage.de/open-access-tage-2024-koeln/koeln/programm/donnerstag-12092024"]:
+
+    # for each day round it up to the new X00 for better distinguishable ids
+    global_counter = (int(str(global_counter)[0])+1)*100
+
+    day_string = "-".join((url[-4:], url[-6:-4], url[-8:-6]))
+    day = Day(date=datetime.strptime(day_string, "%Y-%m-%d"))
+    conference.add_day(day)
 
     response = requests.get(url=url)
     soup = BeautifulSoup(response.content, 'html.parser')
+    # The website contains of two different sides with times (left)
+    # and the different sessions/workshops (right side), but in the html
+    # structure they simply follow each other. The characteristics of the
+    # left hand side is a header element and on the right hand side usually
+    # the different sessions/workshops starts with a h3 element.
     all_results = soup.select('main div:has(header) div>div:has(h3)')
 
     for element in all_results:
@@ -28,15 +85,52 @@ for url in ["https://open-access-tage.de/open-access-tage-2023-berlin/programm/m
             left_side = a.find("header")
             if left_side is not None:
                 break
+        if left_side is None:
+            print("ERROR: No left side with times is found.")
+        else:
+            time_span = left_side.text.strip()
+        # We will only create events if we reach a new element. In order to make this also work for
+        # the last children, we will add a new artificial h3 element at the end.
+        new_h3 = soup.new_tag("h3")
+        element.append(new_h3)
         for child in element.children:
             # each session starts with a h3 title and is then followed by several other nodes as its content,
-            # until the next h3 title starts
+            # until the next h3 title starts (exception like the opening might exist)
             if child.name == 'h3':
-                # save information so far
+                if title in ["Eröffnung und Keynote 1"] and child.text != "":
+                    continue
+                # save information so far before dealing with this new session/workshop starting with another h3 element
                 if len(title) > 0:
-                    abstracts[title_short] = content.strip().replace(u'\xa0', u' ')
-                    titles[title_short] = title
-                    times[title_short] = left_side.text.strip()
+                    new_id = generate_id(title_short)
+                    if new_id == "counter":
+                        global_counter += 1
+                        new_id = global_counter
+                    if new_id in seen_ids:
+                        print("Warning: Same id used multiple times:", new_id)
+                    else:
+                        seen_ids.append(new_id)
+                    start, duration = extract_start_time(time_span)
+
+                    session_object = Event(
+                        id=new_id,
+                        date=datetime.fromisoformat(day_string + "T" + start + ":00+02:00"),
+                        start=start,
+                        duration=duration,
+                        track=determine_track(title_short),
+                        abstract=content.strip().replace(u'\xa0', u' '),
+                        title=title,
+                        type='Vortrag'
+                    )
+
+                    if room == "TBA":
+                        room = "-".join((room, str(new_id)))
+                    if room not in [r.name for r in day.room_objects]:
+                        day.add_room(Room(name=room))
+                    for r in day.room_objects:
+                        if r.name == room:
+                            r.add_event(session_object)
+                            break
+
                 # restart with the next one
                 title = child.text.strip().replace(u'\xa0', u' ')
                 if title.startswith(("Session", "Workshop", "Keynote")):
@@ -44,12 +138,15 @@ for url in ["https://open-access-tage.de/open-access-tage-2023-berlin/programm/m
                 else:
                     title_short = title
                 content = ""
+                if title_short.startswith("Führung "):
+                    room = " ".join(title_short.split(" ")[1:])
+                else:
+                    room = "TBA"
             else:
                 if child.text.strip() == "Zusammenfassung":
                     continue
                 elif child.text.startswith("Ort:"):
-                    room = child.text[child.text.find(": ") + 1:].strip()#next(child.children, None)
-                    rooms[title_short] = room
+                    room = child.contents[0][child.contents[0].find(": ") + 1:].strip()
                     cleaned = ""
                     ignore = True
                     for i, x in enumerate(child.children):
@@ -64,85 +161,34 @@ for url in ["https://open-access-tage.de/open-access-tage-2023-berlin/programm/m
                     content += cleaned.strip()
                 else:
                     content += str(child)
-        # save information from last session on that side
-        if len(title) > 0:
-            abstracts[title_short] = content.strip().replace(u'\xa0', u' ')
-            titles[title_short] = title
-            times[title_short] = left_side.text.strip()
 
 
+xmldata = conference.generate("Erzeugt von https://github.com/zuphilip/oat-skripte um " + str(datetime.now()))
+reparsed = minidom.parseString(xmldata.decode("utf-8"))
+# delete day_change as it cannot be empty
+for node in reparsed.getElementsByTagName('day_change'):
+    node.parentNode.removeChild(node)
+# delete some empty nodes and empty attributes
+deleted = 0
+for ignore in ['description', 'conf_url', 'full_conf_url', 'released']:
+    for node in reparsed.getElementsByTagName(ignore):
+        if node.toxml() == "<" + ignore + "/>":
+            node.parentNode.removeChild(node)
+            deleted += 1
+# delete all date nodes which are unneccessary and make trouble because of the timezoning
+#for node in reparsed.getElementsByTagName('date'):
+#    node.parentNode.removeChild(node)
+#    deleted += 1
+print("INFO: Deleted", deleted, "empty nodes + date nodes")
+for node in reparsed.getElementsByTagName('person'):
+    if node.getAttribute('id') == "None":
+        node.removeAttribute('id')
 
-tree = ET.parse('oat23.skeleton.xml')
-root_node = tree.getroot()
-seen_ids = []
-
-for event in root_node.findall('day/room/event'):
-    ref = event.attrib["id"]
-    if ref in seen_ids:
-        print("Warning: Same id used multiple times:", ref)
-    else:
-        seen_ids.append(ref)
-    # title, track, type
-    title = event.find('title').text.strip()
-    if title.startswith(("Session", "Workshop", "Keynote")):
-        title_short = title.split(":")[0]
-    else:
-        title_short = title
-    if title_short in ["Postersession", "Tool-Marktplatz"]:
-        track = title_short
-    elif "Session" in title_short or "Keynote" in title_short:
-        track = "Vortragssession"
-    elif "Workshop" in title_short:
-        track = "Workshop"
-    else:
-        track = "Sonstige"
-    if event.find("track") is None:
-        track_node = ET.SubElement(event, "track")
-        track_node.text = track
-    # TODO: Is this necessary or can we also delete it?
-    if event.find("type") is None:
-        type_node = ET.SubElement(event, "type")
-        type_node.text = "NA"
-    # get room information from parent and write it as new node
-    if event.find("room") is None:
-        room_parent_node = event.getparent()
-        room = room_parent_node.attrib["name"]
-        room_node = ET.SubElement(event, "room")
-        room_node.text = room
-    else:
-        room = event.find('room').text.strip()
-    # get date information from parent and write it together with starting time as new node
-    if event.find("date") is None:
-        date_parent_node = event.getparent().getparent()
-        date = date_parent_node.attrib["date"]
-        date_node = ET.SubElement(event, "date")
-        time = event.find("start").text
-        date_node.text = date + "T" + time + ":00+02:00"
-
-    abstract = event.find('abstract')
-    if title in ["Kaffeepause", "Mittagspause", "Ausklang", "Ankommen und Registrierung"]:
-        continue
-    if title_short in times:
-        [start, end] = times[title_short].split('–')
-        start_time = [int(x) for x in start.split(".")]
-        comparison_time = [int(x) for x in event.find("start").text.split(":")]
-        if start_time != comparison_time:
-            print("Warning: Mismatch starting times", start, event.find("start").text, "[" + title_short + "]")
-    if title_short in abstracts:
-        abstract.text = abstracts[title_short]
-    else:
-        print("\n")
-        print(title_short, title, "NOT FOUND on website")
-    # check for consistency
-    if title_short in rooms and rooms[title_short].find(room) < 0:
-        print("Warning: Rooms mismatch")
-        print("\t" + room)
-        print("\t" + rooms[title_short])
-        print("\t" + title_short)
-    if title != titles[title_short]:
-        print("Warning: Title mismatch")
-        print("\t" + title)
-        print("\t" + titles[title_short])
-    #current_abstract = event.find('abstract')
-ET.indent(root_node, space="  ")
-tree.write("oat23.xml", pretty_print=True)
+# Output in file
+with open("oat24.xml", 'w', encoding="utf-8") as outfile:
+    outfile.write(reparsed.toprettyxml(indent="  "))
+# Save another copy which will not be overwritten, when rerun on another day
+name = "oat24-" + str(date.today()) + ".xml"
+with open(name, 'w', encoding="utf-8") as outfile:
+    outfile.write(reparsed.toprettyxml(indent="  "))
+# Inspect differences in the output files with e.g. git diff
