@@ -147,6 +147,10 @@ for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/progr
                     continue
                 elif child.text.startswith("Ort:"):
                     room = child.contents[0][child.contents[0].find(": ") + 1:].strip()
+                    # The same node with the room information also contains the name
+                    # of the moderation and a br node inbetween. Thus we go through all
+                    # child nodes and ignore the first text node (room) as well as the
+                    # following br node.
                     cleaned = ""
                     ignore = True
                     for i, x in enumerate(child.children):
@@ -158,7 +162,8 @@ for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/progr
                                 cleaned += "<br/>"
                             else:
                                 cleaned += x.text
-                    content += cleaned.strip()
+                    if cleaned.strip() != "":
+                        content += cleaned.strip() + "<br/><br/>"
                 else:
                     content += str(child)
 
