@@ -97,7 +97,8 @@ for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/progr
             # each session starts with a h3 title and is then followed by several other nodes as its content,
             # until the next h3 title starts (exception like the opening might exist)
             if child.name == 'h3':
-                if title in ["Eröffnung und Keynote 1"] and child.text != "":
+                if title in ["Eröffnung und Keynote 1", "Keynote 3: Umsetzung der Open Science-Agenda – Der Beitrag der Deutschen UNESCO-Kommission"] and child.text != "":
+                    content += str(child)
                     continue
                 # save information so far before dealing with this new session/workshop starting with another h3 element
                 if len(title) > 0:
