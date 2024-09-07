@@ -35,7 +35,7 @@ def generate_id(title_short):
     else:
         return "counter"
 def determine_track(title_short):
-    if title_short in ["Postersession", "Tool-Marktplatz"]:
+    if title_short in ["Postersession", "Tool-Marktplatz", "Toolmarktplatz"]:
         return title_short
     elif "Session" in title_short or "Keynote" in title_short:
         return "Vortragssession"
@@ -151,6 +151,8 @@ for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/progr
                     continue
                 elif child.text.startswith("Ort:"):
                     room = child.contents[0][child.contents[0].find(": ") + 1:].strip()
+                    if room == "":
+                        room = child.text[4:].strip()
                     # The same node with the room information also contains the name
                     # of the moderation and a br node inbetween. Thus we go through all
                     # child nodes and ignore the first text node (room) as well as the
