@@ -125,6 +125,9 @@ for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/progr
 
                     if room == "TBA":
                         room = "-".join((room, str(new_id)))
+                    # there are different whitespaces used in the names of rooms
+                    # and therefore we need to normalize them first
+                    room = " ".join(room.split())
                     if room not in [r.name for r in day.room_objects]:
                         day.add_room(Room(name=room))
                     for r in day.room_objects:
