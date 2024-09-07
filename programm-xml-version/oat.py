@@ -14,6 +14,7 @@ from pentabarf.Room import Room
 
 global_counter = 0
 seen_ids = []
+rooms_list = []
 
 conference = Conference(
     title="Open Access Tage 2024",
@@ -66,6 +67,14 @@ for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/progr
     day = Day(date=datetime.strptime(day_string, "%Y-%m-%d"))
     conference.add_day(day)
 
+    try:
+        with open("oat24-rooms.txt", 'r', encoding="utf-8") as room_file:
+            for line in room_file:
+                # the main rooms in this order will be written first in the schedule
+                day.add_room(Room(name=line.rstrip()))
+    except FileNotFoundError:
+        print('No rooms file found')
+
     response = requests.get(url=url)
     soup = BeautifulSoup(response.content, 'html.parser')
     # The website contains of two different sides with times (left)
@@ -111,13 +120,14 @@ for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/progr
                     else:
                         seen_ids.append(new_id)
                     start, duration = extract_start_time(time_span)
+                    track = determine_track(title_short)
 
                     session_object = Event(
                         id=new_id,
                         date=datetime.fromisoformat(day_string + "T" + start + ":00+02:00"),
                         start=start,
                         duration=duration,
-                        track=determine_track(title_short),
+                        track=track,
                         abstract=content.strip().replace(u'\xa0', u' '),
                         title=title,
                         type='Vortrag'
@@ -134,6 +144,9 @@ for url in ["https://open-access-tage.de/open-access-tage-2024-koeln/koeln/progr
                         if r.name == room:
                             r.add_event(session_object)
                             break
+                    if room not in rooms_list and track != "Sonstige":
+                        # add main rooms to list which will be written into file
+                        rooms_list.append(room)
 
                 # restart with the next one
                 title = child.text.strip().replace(u'\xa0', u' ')
@@ -203,3 +216,9 @@ name = "oat24-" + str(date.today()) + ".xml"
 with open(name, 'w', encoding="utf-8") as outfile:
     outfile.write(reparsed.toprettyxml(indent="  "))
 # Inspect differences in the output files with e.g. git diff
+
+# write rooms of main program sorted in file
+if len(rooms_list)>0:
+    with open("oat24-rooms.txt", 'w', encoding="utf-8") as outfile:
+        for room in sorted(rooms_list):
+            outfile.write(room + "\n")
